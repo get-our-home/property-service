@@ -128,7 +128,7 @@ public class CreatePropertyRequestDto {
     private Boolean hasElevator;
 
     @JsonProperty("facility_info")
-    @Schema(description = "시설 정보", example = "{ \"gym\": true, \"pool\": false }")
+    @Schema(description = "시설 정보", example = FacilityInfo.DEFAULT_JSON_EXAMPLE)
     @NotBlank(message = "시설 정보를 입력해주세요")
     private FacilityInfo facilityInfo;
 

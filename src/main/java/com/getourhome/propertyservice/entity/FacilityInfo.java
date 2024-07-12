@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FacilityInfo {
-    private String heating; // 난방 시설 TODO 난방시설 종류
+    private HeatingType heating = HeatingType.NONE; // 난방 시설
 
     // 냉방 시설
     private boolean coolingWallMounted; // 벽걸이형 에어컨 여부
@@ -52,4 +52,45 @@ public class FacilityInfo {
     private boolean terrace; // 테라스 여부
     private boolean yard; // 마당 여부
     private boolean parcelBox; // 무인택배함 여부
+
+
+    public static final String DEFAULT_JSON_EXAMPLE = "{"
+            + "\"heating\": \"3\","
+            + "\"coolingWallMounted\": false,"
+            + "\"coolingStandType\": false,"
+            + "\"coolingCeilingType\": false,"
+            + "\"bed\": false,"
+            + "\"desk\": false,"
+            + "\"closet\": false,"
+            + "\"diningTable\": false,"
+            + "\"sofa\": false,"
+            + "\"shoeCabinet\": false,"
+            + "\"refrigerator\": false,"
+            + "\"washingMachine\": false,"
+            + "\"dryer\": false,"
+            + "\"showerBooth\": false,"
+            + "\"bathtub\": false,"
+            + "\"bidet\": false,"
+            + "\"sink\": false,"
+            + "\"dishwasher\": false,"
+            + "\"gasStove\": false,"
+            + "\"induction\": false,"
+            + "\"microwave\": false,"
+            + "\"gasOven\": false,"
+            + "\"tv\": false,"
+            + "\"wallCloset\": false,"
+            + "\"securityGuard\": false,"
+            + "\"videoPhone\": false,"
+            + "\"intercom\": false,"
+            + "\"keycard\": false,"
+            + "\"cctv\": false,"
+            + "\"alarm\": false,"
+            + "\"securityLights\": false,"
+            + "\"crimePrevention\": false,"
+            + "\"fireAlarm\": false,"
+            + "\"balcony\": false,"
+            + "\"terrace\": false,"
+            + "\"yard\": false,"
+            + "\"parcelBox\": false"
+            + "}";
 }

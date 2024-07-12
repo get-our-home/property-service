@@ -55,7 +55,7 @@ public class Property {
     @Column(name = "parking_spaces", nullable = false) private Integer parkingSpaces = -1; // 주차 가능 대수, -1 불가
     @Column(name = "has_elevator", nullable = false) private Boolean hasElevator = false; // 엘레베이터 여부
     @Column(name = "facility_info", nullable = false) @JdbcTypeCode(SqlTypes.JSON)
-    private FacilityInfo facilityInfo; // 시설 정보, TODO 동작 확인 필요
+    private FacilityInfo facilityInfo; // 시설 정보
     @Column(nullable = false) private String title; // 제목, 길이 40자 (120)
     @Column(nullable = false, length = 3000) private String description; // 상세설명, 1000자 제한
     @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
