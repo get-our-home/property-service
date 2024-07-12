@@ -12,19 +12,22 @@ import java.util.UUID;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Properties")
 public class Property {
     @Id
+    @Setter(AccessLevel.NONE)
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     @Column(updatable = false, nullable = false) private UUID id;
-    @Column(name = "agent_uuid", nullable = false) private UUID agentUuid; // 공인중개사 고유식별번호
+    @Column(name = "agent_uuid", nullable = false)
+    @Setter(AccessLevel.NONE)private UUID agentUuid; // 공인중개사 고유식별번호
     @Column(name = "agent_id", nullable = false) private String agentId; // 공인중개사 아이디
     @Setter @Column(name = "property_type", nullable = false)
     @Enumerated(EnumType.ORDINAL) private PropertyType propertyType; // 오피스텔, 아파트, 다세대..
