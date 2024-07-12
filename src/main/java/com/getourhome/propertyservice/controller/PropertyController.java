@@ -38,8 +38,7 @@ public class PropertyController {
             @ApiResponse(responseCode = "201", description = "부동산 매물 업로드 성공",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = BaseResponseDto.class)) }),
-            @ApiResponse(responseCode = "401", description = "인증된 공인중개사가 아님",
-                    content = @Content),
+            @ApiResponse(responseCode = "401", description = "인증된 공인중개사가 아님"),
             @ApiResponse(responseCode = "500", description = "서버 에러")})
     public ResponseEntity<?> createProperty(
             @RequestHeader(value = "Authorization", required = false) String authorizationHeader,
@@ -51,10 +50,10 @@ public class PropertyController {
         String jwtToken = authorizationHeader.substring(7);
         boolean isValidToken = jwtTokenProvider.validateToken(jwtToken);
         String role = jwtTokenProvider.getRole(jwtToken);
-        log.info("" + isValidToken);
-        log.info("" + role);
-        log.info("" + role.equals("AGENT"));
-        if (!isValidToken || !role.equals("AGENT")) {
+        if (!isValidToken) {
+            return new ResponseEntity<>("Invalid JWT token", HttpStatus.UNAUTHORIZED);
+        }
+        if(!role.equals("AGENT")){
             return new ResponseEntity<>("Invalid JWT token", HttpStatus.UNAUTHORIZED);
         }
 

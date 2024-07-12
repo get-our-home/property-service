@@ -1,14 +1,13 @@
 package com.getourhome.propertyservice.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class FacilityInfo {
-    private String heating; // 난방 시설
+    private String heating; // 난방 시설 TODO 난방시설 종류
 
     // 냉방 시설
     private boolean coolingWallMounted; // 벽걸이형 에어컨 여부
