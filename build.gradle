@@ -36,6 +36,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
     implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
     implementation 'io.hypersistence:hypersistence-utils-hibernate-63:3.8.1'
+    implementation 'org.springframework.kafka:spring-kafka'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
